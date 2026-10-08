@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-10-07T11:53:04.700512+08:00",
+  "scope": "Public native capability documentation and installed CLI implementation; no sandboxed model/task execution performed. HTML choices are simulated.",
+  "defaultPolicy": "Follow executor (null) until resolved settings are returned; never label unresolved settings as sandbox active.",
+  "codex": {
+    "cliVersion": "0.160.1",
+    "sandbox": [
+      "read-only",
+      "workspace-write",
+      "danger-full-access"
+    ],
+    "approvalPolicy": [
+      "on-request",
+      "never"
+    ],
+    "approvalsReviewer": [
+      "user",
+      "auto_review"
+    ],
+    "excludedApprovalChoices": {
+      "untrusted": "Compatibility enum; not directly selectable in current official configuration",
+      "on-failure": "Deprecated"
+    },
+    "evidence": "codex-model-catalog.json#permissionCapabilities",
+    "sources": [
+      "https://learn.chatgpt.com/docs/sandboxing",
+      "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "https://learn.chatgpt.com/docs/sandboxing/auto-review"
+    ]
+  },
+  "claude": {
+    "permissionMode": [
+      "default",
+      "acceptEdits",
+      "plan",
+      "auto",
+      "dontAsk",
+      "bypassPermissions"
+    ],
+    "sandboxFields": [
+      "enabled",
+      "autoAllowBashIfSandboxed",
+      "failIfUnavailable",
+      "allowUnsandboxedCommands",
+      "excludedCommands"
+    ],
+    "explicitEnableProductPolicy": {
+      "enabled": true,
+      "failIfUnavailable": true,
+      "allowUnsandboxedCommands": false,
+      "excludedCommands": []
+    },
+    "scope": "Shell commands and child processes filesystem/network only; excludes direct Read/Edit/Write, WebFetch/WebSearch, MCP and hooks. macOS uses Seatbelt.",
+    "restrictions": [
+      "Haiku does not support auto permission mode",
+      "bypassPermissions requires executor/organization authorization and enablement at session startup",
+      "plan is a permission mode, not an OS read-only boundary",
+      "Omitted permissionMode may follow runtime startup rules; do not assume default/manual"
+    ],
+    "sources": [
+      "https://code.claude.com/docs/en/agent-sdk/permissions",
+      "https://code.claude.com/docs/en/sandboxing",
+      "https://code.claude.com/docs/en/agent-sdk/python#sandboxsettings",
+      "https://code.claude.com/docs/en/permission-modes#eliminate-permission-prompts-with-auto-mode"
+    ]
+  },
+  "cursor": {
+    "cliVersion": "2026.09.10-fd3934a",
+    "sandboxMode": [
+      "enabled",
+      "disabled"
+    ],
+    "approvalMode": [
+      "allowlist",
+      "auto-review",
+      "unrestricted"
+    ],
+    "settingsApplication": "Next process startup; current ACP model config handlers do not expose sandbox or approval controls",
+    "staticEvidence": "CursorAcpAgent buildConfigOptions only returns mode/model parameter options; setSessionConfigOption handles mode/model selections. Global CLI sandbox/force/auto-review flags are forwarded to runAcp.",
+    "sources": [
+      "https://cursor.com/docs/cli/reference/configuration",
+      "https://cursor.com/docs/cli/reference/parameters",
+      "https://cursor.com/docs/cli/reference/permissions",
+      "https://cursor.com/docs/cli/acp"
+    ]
+  },
+  "productRules": [
+    "Executor-specific settings are saved per task/conversation and restored when switching executor",
+    "Requested permissions are a maximum; stage read-only constraints and directory writer lock continue to apply",
+    "Freeze permission request snapshot on each reply/Run; report actual effective permissions only when verified",
+    "Explicitly required isolation must fail closed if unsupported or unavailable",
+    "A worktree is source separation, not an operating-system sandbox"
+  ],
+  "notVerified": [
+    "Actual effective OS filesystem/network isolation",
+    "Live permission denial/approval behavior",
+    "ACP restart and session recovery after security option change",
+    "Host helper/MCP/tool boundary enforcement",
+    "Claude SDK account-specific availability of advanced modes"
+  ]
+}

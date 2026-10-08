@@ -1,0 +1,252 @@
+{
+  "checkedAt": "2026-10-07T11:40:41.375164+08:00",
+  "scope": "CLI catalog queried; installed ACP implementation inspected statically. No prompt or new ACP session sent.",
+  "executable": "/Users/sim/.local/bin/cursor-agent",
+  "resolvedExecutable": "/Users/sim/.local/share/cursor-agent/versions/2026.09.10-fd3934a/cursor-agent",
+  "version": "2026.09.10-fd3934a",
+  "modelCatalog": {
+    "command": [
+      "cursor-agent",
+      "models"
+    ],
+    "exitCode": 0,
+    "subsetOnly": true,
+    "models": [
+      {
+        "id": "auto",
+        "displayName": "Auto (default)"
+      },
+      {
+        "id": "gpt-5.3-codex-low",
+        "displayName": "Codex 5.3 Low"
+      },
+      {
+        "id": "gpt-5.3-codex",
+        "displayName": "Codex 5.3"
+      },
+      {
+        "id": "gpt-5.3-codex-high",
+        "displayName": "Codex 5.3 High"
+      },
+      {
+        "id": "gpt-5.3-codex-xhigh",
+        "displayName": "Codex 5.3 Extra High"
+      },
+      {
+        "id": "composer-2.5",
+        "displayName": "Composer 2.5"
+      },
+      {
+        "id": "composer-2.5-fast",
+        "displayName": "Composer 2.5 Fast"
+      },
+      {
+        "id": "claude-sonnet-5-low",
+        "displayName": "Claude Sonnet 5 1M Low"
+      },
+      {
+        "id": "claude-sonnet-5-medium",
+        "displayName": "Claude Sonnet 5 1M Medium"
+      },
+      {
+        "id": "claude-sonnet-5-high",
+        "displayName": "Claude Sonnet 5 1M"
+      },
+      {
+        "id": "claude-sonnet-5-xhigh",
+        "displayName": "Claude Sonnet 5 1M Extra High"
+      },
+      {
+        "id": "claude-sonnet-5-max",
+        "displayName": "Claude Sonnet 5 1M Max"
+      }
+    ],
+    "parameterSyntaxTip": "Tip: use --model <id> (or /model <id> in interactive mode) to switch. Parameterized models also accept quoted overrides, e.g. --model 'claude-opus-4-8[context=1m,effort=high,fast=false]'.",
+    "note": "Account-specific examples; do not hardcode supported IDs, suffixes, levels or defaults."
+  },
+  "acpStaticInspection": {
+    "sourceRoot": "/Users/sim/.local/share/cursor-agent/versions/2026.09.10-fd3934a",
+    "sourceSha256": {
+      "7214.index.js": "f03e68de9174bac1909592045f05632f706ea15277b9cd20af5511b311467523",
+      "8096.index.js": "12efdcc1b46bfe54767a08a51ed3b2d30e6199f58a12ac8d88d3a67e02f1051b",
+      "8060.index.js": "aed953660e1a5190eef2127d0124dbb39dc3913c4084d1c404aea39b9b9594ae",
+      "4642.index.js": "9b3c61e40202c8130f68bd2016dc4ef53b6411167af73b2b1c4a61ef6c3ad3cb"
+    },
+    "implementation": "./src/acp/cursor-acp-agent.ts in 7214.index.js",
+    "newSessionReturns": [
+      "sessionId",
+      "modes",
+      "models",
+      "configOptions"
+    ],
+    "handlers": [
+      "session/set_config_option",
+      "session/set_model"
+    ],
+    "parameterizedPickerCapability": {
+      "path": "clientCapabilities._meta.parameterizedModelPicker",
+      "value": true,
+      "scope": "Cursor CLI version-specific extension; feature detection required"
+    },
+    "defaultPicker": "variants (compound model parameter selections)",
+    "parameterCategories": {
+      "effort": "thought_level",
+      "reasoning": "thought_level",
+      "thinking": "thought_level"
+    },
+    "parameterValues": "Read current model parameterDefinitions and returned option values; do not construct slugs.",
+    "isolationFinding": "setSessionConfigOption updates shared modelManager; syncSessionsToCurrentModel iterates all sessions in the same ACP process. Model setter also persists preference through configProvider.",
+    "adapterRequirement": "Use separate ACP process per logical executor conversation/task; snapshot and apply config immediately before a new Run; verify preference isolation during implementation.",
+    "characterOffsets": {
+      "7214.index.js": {
+        "newSession": 48201,
+        "setSessionConfigOption": 52671,
+        "unstable_setSessionModel": 53358,
+        "clientSupportsParameterizedModelPicker": 54330,
+        "thoughtLevelCategory": 58317,
+        "syncSessionsToCurrentModel": 61686,
+        "initializeSessionState": 63736
+      },
+      "8096.index.js": {
+        "session/set_config_option dispatch": 2249000,
+        "session/set_model dispatch": 2249150
+      },
+      "8060.index.js": {
+        "mapInitialModelVariantToParameterizedSelection": 38297,
+        "setCurrentModelWithParameters": 52713
+      }
+    }
+  },
+  "officialCorroboration": [
+    {
+      "url": "https://cursor.com/docs/sdk/typescript#model-parameters",
+      "finding": "SDK model.params supports reasoning effort; Cursor.models.list returns legal parameters/values and preset variants."
+    },
+    {
+      "url": "https://cursor.com/docs/cli/acp",
+      "finding": "CLI ACP transport and session protocol; generic protocol features alone do not prove a concrete agent capability."
+    }
+  ],
+  "notVerified": [
+    "ACP session/new actual options",
+    "ACP configuration mutation acceptance",
+    "effective inference effort",
+    "real tool approvals and cancellation",
+    "parallel-process preference isolation"
+  ],
+  "noModelPromptSent": true,
+  "noAuthenticationStarted": true,
+  "noCredentialOrAccountIdentifierRecorded": true,
+  "probeBoundary": "No session/new or set_config_option probe: session setup initializes local session storage and user MCP; avoided changes to existing user setup.",
+  "uiCatalogScope": {
+    "checkedAt": "2026-10-07T11:44:50.689324+08:00",
+    "userRequestedFamilies": [
+      "Grok",
+      "Composer",
+      "Auto"
+    ],
+    "models": [
+      {
+        "id": "auto",
+        "displayName": "Auto (default)"
+      },
+      {
+        "id": "composer-2.5",
+        "displayName": "Composer 2.5"
+      },
+      {
+        "id": "cursor-grok-4.5-high",
+        "displayName": "Grok 4.5"
+      },
+      {
+        "id": "cursor-grok-4.5-high-fast",
+        "displayName": "Grok 4.5 Fast"
+      },
+      {
+        "id": "grok-4.7-low",
+        "displayName": "Grok 4.7  Low"
+      },
+      {
+        "id": "grok-4.7-low-fast",
+        "displayName": "Grok 4.7  Low Fast​​"
+      },
+      {
+        "id": "grok-4.7-medium",
+        "displayName": "Grok 4.7  Medium"
+      },
+      {
+        "id": "grok-4.7-medium-fast",
+        "displayName": "Grok 4.7  Medium Fast​​"
+      },
+      {
+        "id": "grok-4.7-high",
+        "displayName": "Grok 4.7  High"
+      },
+      {
+        "id": "grok-4.7-high-fast",
+        "displayName": "Grok 4.7  High Fast​​"
+      },
+      {
+        "id": "grok-4.7-xhigh",
+        "displayName": "Grok 4.7  Extra High"
+      },
+      {
+        "id": "grok-4.7-xhigh-fast",
+        "displayName": "Grok 4.7  Extra High Fast​​"
+      },
+      {
+        "id": "cursor-grok-4.6-low",
+        "displayName": "Grok 4.6 Low"
+      },
+      {
+        "id": "cursor-grok-4.6-low-fast",
+        "displayName": "Grok 4.6 Low Fast"
+      },
+      {
+        "id": "cursor-grok-4.6-medium",
+        "displayName": "Grok 4.6 Medium"
+      },
+      {
+        "id": "cursor-grok-4.6-medium-fast",
+        "displayName": "Grok 4.6 Medium Fast"
+      },
+      {
+        "id": "cursor-grok-4.6-high",
+        "displayName": "Grok 4.6"
+      },
+      {
+        "id": "cursor-grok-4.6-high-fast",
+        "displayName": "Grok 4.6 Fast"
+      },
+      {
+        "id": "cursor-grok-4.6-xhigh",
+        "displayName": "Grok 4.6 Extra High"
+      },
+      {
+        "id": "cursor-grok-4.6-xhigh-fast",
+        "displayName": "Grok 4.6 Extra High Fast"
+      },
+      {
+        "id": "composer-2.5-fast",
+        "displayName": "Composer 2.5 Fast"
+      },
+      {
+        "id": "cursor-grok-4.5-low",
+        "displayName": "Grok 4.5 Low"
+      },
+      {
+        "id": "cursor-grok-4.5-low-fast",
+        "displayName": "Grok 4.5 Low Fast"
+      },
+      {
+        "id": "cursor-grok-4.5-medium",
+        "displayName": "Grok 4.5 Medium"
+      },
+      {
+        "id": "cursor-grok-4.5-medium-fast",
+        "displayName": "Grok 4.5 Medium Fast"
+      }
+    ],
+    "autoVersionPolicy": "Auto is a routing mode without a fixed underlying model version; retain official name."
+  }
+}

@@ -1,0 +1,79 @@
+name: AgentKanban
+options:
+  bundleIdPrefix: com.agentkanban
+  deploymentTarget:
+    macOS: '26.0'
+settings:
+  base:
+    SWIFT_VERSION: '6.2'
+    MACOSX_DEPLOYMENT_TARGET: '26.0'
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_INCLUDE_PATHS: '$(SRCROOT)/Sources/CSQLite'
+targets:
+  AgentKanbanCore:
+    type: framework
+    platform: macOS
+    sources: [Sources/AgentKanbanCore]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.agentkanban.core
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_INCLUDE_PATHS: '$(SRCROOT)/Sources/CSQLite'
+        OTHER_LDFLAGS: '-lsqlite3'
+  AgentKanbanExecutors:
+    type: framework
+    platform: macOS
+    sources: [Sources/AgentKanbanExecutors]
+    dependencies:
+      - target: AgentKanbanCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.agentkanban.executors
+        GENERATE_INFOPLIST_FILE: YES
+  AgentKanban:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/AgentKanban
+        excludes: [Resources]
+      - path: Sources/AgentKanban/Resources
+        type: folder
+        buildPhase: resources
+      - path: Assets/AppIcon.icon
+        type: file
+        buildPhase: resources
+    dependencies:
+      - target: AgentKanbanCore
+      - target: AgentKanbanExecutors
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.agentkanban.desktop
+        PRODUCT_NAME: Agent Kanban
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.developer-tools
+        INFOPLIST_KEY_CFBundleDisplayName: Agent Kanban
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_CFBundleIconName: AppIcon
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: YES
+    scheme:
+      testTargets: [AgentKanbanCoreTests, AgentKanbanExecutorsTests]
+  AgentKanbanCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Tests/AgentKanbanCoreTests]
+    dependencies:
+      - target: AgentKanbanCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+  AgentKanbanExecutorsTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Tests/AgentKanbanExecutorsTests]
+    dependencies:
+      - target: AgentKanbanExecutors
+      - target: AgentKanbanCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES

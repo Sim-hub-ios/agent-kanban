@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "executor": "Codex",
+  "queriedAt": "2026-10-07T03:50:03.619241+00:00",
+  "cliVersion": "0.160.1",
+  "cliVersionOutput": "codex-cli 0.160.1",
+  "commandPath": "/opt/homebrew/bin/codex",
+  "resolvedLauncherPath": "/opt/homebrew/lib/node_modules/@openai/codex/bin/codex.js",
+  "nativeBinaryPath": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "status": "available_from_local_cache",
+  "source": "installed Codex public model catalog cache; not a successful live model/list response",
+  "requestPlanned": {
+    "limit": 100,
+    "includeHidden": false
+  },
+  "scope": "Complete visible model catalog in the specified local cache, fetched for installed Codex CLI 0.160.1 at the recorded time. Public model fields only; account identity is omitted. Cached availability is not a guarantee of inference access for every account. No live model/list response was obtained.",
+  "probe": {
+    "transport": "stdio",
+    "methodsSent": {
+      "initialize": 1
+    },
+    "modelListSent": false,
+    "threadCreated": false,
+    "turnStarted": false,
+    "promptSent": false,
+    "filesystemPolicy": "sandbox-exec denied filesystem writes except a dedicated temporary directory and /dev/null",
+    "temporaryDirectoryRemoved": true,
+    "processReaped": true,
+    "exitCode": 1,
+    "failure": "app_server_exited_before_catalog",
+    "stderrKnownErrorMarkers": [
+      "Operation not permitted"
+    ],
+    "stderrCapturedBytes": 148,
+    "stderrContentPersisted": false,
+    "sandboxVersionCheckSucceeded": true,
+    "furtherProbeStoppedToPreserveReadonlyBoundary": true
+  },
+  "models": [
+    {
+      "id": "gpt-6.1-sol",
+      "model": "gpt-6.1-sol",
+      "displayName": "GPT-6.1-Sol",
+      "description": "Latest workhorse model for coding and everyday work.",
+      "defaultReasoningEffort": "low",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        },
+        {
+          "reasoningEffort": "ultra",
+          "description": "Maximum reasoning with automatic task delegation"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 1,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-6-astra",
+      "model": "gpt-6-astra",
+      "displayName": "GPT-6-Astra",
+      "description": "Frontier intelligence for the most demanding work.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        },
+        {
+          "reasoningEffort": "ultra",
+          "description": "Maximum reasoning with automatic task delegation"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 2,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-6-sol",
+      "model": "gpt-6-sol",
+      "displayName": "GPT-6-Sol",
+      "description": "Previous generation workhorse model.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        },
+        {
+          "reasoningEffort": "ultra",
+          "description": "Maximum reasoning with automatic task delegation"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 3,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-6-luna",
+      "model": "gpt-6-luna",
+      "displayName": "GPT-6-Luna",
+      "description": "Fast and affordable model for easier tasks.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 4,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6-Sol",
+      "description": "Older generation workhorse model.",
+      "defaultReasoningEffort": "low",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        },
+        {
+          "reasoningEffort": "ultra",
+          "description": "Maximum reasoning with automatic task delegation"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 5,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "model": "gpt-5.6-terra",
+      "displayName": "GPT-5.6-Terra",
+      "description": "Older balanced model for straightforward work.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        },
+        {
+          "reasoningEffort": "ultra",
+          "description": "Maximum reasoning with automatic task delegation"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 8,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "model": "gpt-5.6-luna",
+      "displayName": "GPT-5.6-Luna",
+      "description": "Older fast and efficient model.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        }
+      ],
+      "hidden": false,
+      "visibility": "list",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 9,
+      "upgrade": null
+    }
+  ],
+  "references": [
+    "https://developers.openai.com/codex/app-server",
+    "https://developers.openai.com/siwc/token-sharing-open-source/models-and-inference",
+    "https://learn.chatgpt.com/docs/sandboxing",
+    "https://learn.chatgpt.com/docs/config-file/config-reference",
+    "https://learn.chatgpt.com/docs/sandboxing/auto-review",
+    "https://learn.chatgpt.com/docs/app-server"
+  ],
+  "cache": {
+    "path": "/Users/sim/.codex/models_cache.json",
+    "fetchedAt": "2026-10-07T03:49:48.735814Z",
+    "clientVersion": "0.160.1",
+    "matchesInstalledCliVersion": true,
+    "ageSecondsAtRead": 14.883,
+    "accountIdentityOmitted": true,
+    "etagOmitted": true,
+    "sourceFields": {
+      "id": "slug",
+      "model": "slug",
+      "displayName": "display_name",
+      "defaultReasoningEffort": "default_reasoning_level",
+      "supportedReasoningEfforts": "supported_reasoning_levels[].effort",
+      "hidden": "visibility == hide"
+    },
+    "defaultModelAvailable": false
+  },
+  "modelCount": 7,
+  "hiddenModelCount": 3,
+  "hiddenModels": [
+    {
+      "id": "gpt-reserve",
+      "model": "gpt-reserve",
+      "displayName": "GPT-Reserve",
+      "description": "Fast and affordable agentic coding model.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        }
+      ],
+      "hidden": true,
+      "visibility": "hide",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 4,
+      "upgrade": null
+    },
+    {
+      "id": "gpt-5.5",
+      "model": "gpt-5.5",
+      "displayName": "GPT-5.5",
+      "description": "Legacy coding model.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        }
+      ],
+      "hidden": true,
+      "visibility": "hide",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 13,
+      "upgrade": {
+        "model": "gpt-6.1-sol",
+        "migration_markdown": "GPT-5.5 retires on October 14, 2026. Switch to GPT-6.1 Sol to continue working in Codex.",
+        "retirement_at": "2026-10-14T19:00:00Z"
+      }
+    },
+    {
+      "id": "codex-auto-review",
+      "model": "codex-auto-review",
+      "displayName": "Codex Auto Review",
+      "description": "Automatic approval review model for Codex.",
+      "defaultReasoningEffort": "medium",
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        }
+      ],
+      "hidden": true,
+      "visibility": "hide",
+      "isDefault": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportedInApi": true,
+      "priority": 43,
+      "upgrade": null
+    }
+  ],
+  "normalizationNotes": [
+    "isDefault is null because this public cache does not expose the currently selected or default model. Default reasoning efforts are provided separately.",
+    "Only cache entries with visibility=list are included in models. Hidden entries are retained separately for evidence and should not appear in the user model picker.",
+    "Model identifiers and display names are copied exactly from the cache; older visible model versions remain available in the directory until the executor removes them."
+  ],
+  "permissionCapabilities": {
+    "observedAt": "2026-10-07T03:51:27.107386+00:00",
+    "cliVersion": "0.160.1",
+    "evidence": "Installed native CLI --help and app-server generate-json-schema, both executed with sandbox-exec blocking user filesystem writes. Schema files were generated in and removed from a dedicated temporary directory. No thread, turn, model prompt, permission changes, or runtime sandbox test was performed.",
+    "cliSandboxModes": [
+      "read-only",
+      "workspace-write",
+      "danger-full-access"
+    ],
+    "cliSelectableApprovalPolicies": [
+      "on-request",
+      "never"
+    ],
+    "appServerSchemaApprovalStringValues": [
+      "untrusted",
+      "on-request",
+      "never"
+    ],
+    "nonSelectableApprovalValues": {
+      "untrusted": "Schema can represent it, but current official configuration documentation says it cannot be selected directly; stricter behavior may be derived from an untrusted project.",
+      "on-failure": "Not exposed by the installed CLI or generated AskForApproval enum; official configuration documentation marks it deprecated."
+    },
+    "approvalReviewers": {
+      "selectable": [
+        "user",
+        "auto_review"
+      ],
+      "schemaLegacyCompatibility": [
+        "guardian_subagent"
+      ]
+    },
+    "configurationFields": {
+      "sandbox": "sandbox_mode",
+      "approvalPolicy": "approval_policy",
+      "reviewer": "approvals_reviewer"
+    },
+    "appServerFields": {
+      "thread/start": [
+        "sandbox",
+        "approvalPolicy",
+        "approvalsReviewer"
+      ],
+      "thread/resume": [
+        "sandbox",
+        "approvalPolicy",
+        "approvalsReviewer"
+      ],
+      "turn/start": [
+        "sandboxPolicy",
+        "approvalPolicy",
+        "approvalsReviewer"
+      ]
+    },
+    "turnSandboxPolicyTypes": [
+      "dangerFullAccess",
+      "readOnly",
+      "externalSandbox",
+      "workspaceWrite"
+    ],
+    "workspaceWritePolicyFields": {
+      "writableRoots": "array of absolute paths; default []",
+      "networkAccess": "boolean; default false",
+      "excludeSlashTmp": "boolean; default false",
+      "excludeTmpdirEnvVar": "boolean; default false"
+    },
+    "granularApproval": {
+      "requiredBooleanFields": [
+        "sandbox_approval",
+        "rules",
+        "mcp_elicitations"
+      ],
+      "optionalBooleanFieldsWithFalseDefault": [
+        "request_permissions",
+        "skill_approval"
+      ],
+      "semantics": "true allows approval prompts in that category to surface; false auto-rejects that category. It does not automatically approve the action."
+    },
+    "nativePermissionPresets": [
+      {
+        "displayName": "Ask for approval",
+        "sandbox": "workspace-write",
+        "approvalPolicy": "on-request",
+        "approvalsReviewer": "user"
+      },
+      {
+        "displayName": "Approve for me",
+        "sandbox": "workspace-write",
+        "approvalPolicy": "on-request",
+        "approvalsReviewer": "auto_review"
+      },
+      {
+        "displayName": "Full access",
+        "sandbox": "danger-full-access",
+        "approvalPolicy": "never",
+        "approvalsReviewer": null
+      }
+    ],
+    "semantics": [
+      "Sandboxing controls execution boundaries; approvalPolicy controls whether crossing those boundaries can ask for review. Do not equate never with disabling the sandbox.",
+      "read-only is the native filesystem restriction mode; workspace-write permits workspace modifications and routine local commands within the boundary; danger-full-access removes native filesystem and network sandbox boundaries.",
+      "on-request permits requests to cross a sandbox boundary; never does not pause for approvals, so denied sandbox operations fail rather than silently obtaining broader access.",
+      "auto_review changes who reviews eligible approval requests and does not by itself expand writable roots, enable network access, or review actions already allowed inside the sandbox.",
+      "Current configured policies remain subject to executor and organization requirements. A UI selection alone is not proof that a requested runtime policy was applied.",
+      "Host process-level isolation and native executor sandboxing are separate controls; local worktree separation alone is not an OS sandbox."
+    ],
+    "references": [
+      "https://learn.chatgpt.com/docs/sandboxing",
+      "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "https://learn.chatgpt.com/docs/sandboxing/auto-review",
+      "https://learn.chatgpt.com/docs/app-server"
+    ]
+  }
+}

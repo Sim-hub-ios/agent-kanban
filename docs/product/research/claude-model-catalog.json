@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-10-07T11:46:28.376926+08:00",
+  "scope": "Official current public catalog; not an account authorization probe. Claude CLI version only was read. No prompt sent.",
+  "claudeCodeVersion": "2.1.292",
+  "models": [
+    {
+      "id": "claude-fable-5-1",
+      "displayName": "Claude Fable 5.1",
+      "supportedEffortLevels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "sdkDefaultEffort": null
+    },
+    {
+      "id": "claude-opus-5-5",
+      "displayName": "Claude Opus 5.5",
+      "supportedEffortLevels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "sdkDefaultEffort": null
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "displayName": "Claude Sonnet 5.5",
+      "supportedEffortLevels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "sdkDefaultEffort": null
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "displayName": "Claude Haiku 4.5",
+      "supportedEffortLevels": [],
+      "sdkDefaultEffort": null
+    }
+  ],
+  "sources": [
+    "https://platform.claude.com/docs/en/models/overview",
+    "https://code.claude.com/docs/en/model-config#adjust-effort-level",
+    "https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md#0249"
+  ],
+  "defaultPolicy": "No Agent SDK default effort contract verified. Keep null to follow executor; API and Claude Code defaults can differ.",
+  "notVerified": [
+    "Account-specific model availability",
+    "Agent SDK model query",
+    "Inference effort behavior"
+  ],
+  "noPromptSent": true,
+  "noCredentialsRecorded": true
+}

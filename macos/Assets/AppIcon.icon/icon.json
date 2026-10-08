@@ -1,0 +1,29 @@
+{
+  "fill": {
+    "automatic-gradient": "srgb:0.03137,0.06275,0.18824,1.00000"
+  },
+  "groups": [
+    {
+      "blend-mode": "normal",
+      "layers": [
+        {
+          "glass": false,
+          "image-name": "Kanban.png",
+          "name": "Kanban"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0
+      },
+      "specular": false,
+      "translucency": {
+        "enabled": false,
+        "value": 1
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}

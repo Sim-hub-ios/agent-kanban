@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-06",
+  "timezone": "Asia/Shanghai",
+  "scope": "read-only CLI discovery and ACP initialize; no authenticate, session creation, prompt, model request, install or upgrade",
+  "cursorExecutable": "/Users/sim/.local/bin/cursor-agent",
+  "resolvedExecutable": "/Users/sim/.local/share/cursor-agent/versions/2026.09.10-fd3934a/cursor-agent",
+  "cursorVersion": "2026.09.10-fd3934a",
+  "pathCollision": {
+    "bareAgent": "/Users/sim/.grok/bin/agent",
+    "localAgentSymlink": "/Users/sim/.local/bin/agent -> /Users/sim/.grok/bin/agent",
+    "requirement": "Validate vendor/version and configure absolute executable path; do not rely on bare agent"
+  },
+  "helpAcp": "Start the Cursor Agent as an ACP (Agent Client Protocol) server",
+  "initializeRequest": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": 1,
+      "clientCapabilities": {},
+      "clientInfo": {
+        "name": "agent-kanban-research-probe",
+        "version": "0.1"
+      }
+    }
+  },
+  "initializeResult": {
+    "protocolVersion": 1,
+    "agentCapabilities": {
+      "loadSession": true,
+      "mcpCapabilities": {
+        "http": true,
+        "sse": true
+      },
+      "promptCapabilities": {
+        "audio": false,
+        "embeddedContext": false,
+        "image": true
+      },
+      "sessionCapabilities": {
+        "list": {}
+      }
+    }
+  },
+  "cleanup": "Probe process group terminated and waited; temporary working directory removed",
+  "notVerified": [
+    "authentication",
+    "real model availability",
+    "session/new or session/load",
+    "events during real prompt",
+    "permissions or Cursor extension callbacks",
+    "readonly and sandbox behavior",
+    "cancel and child process termination",
+    "SDK Bridge runtime",
+    "Cloud API runtime"
+  ]
+}

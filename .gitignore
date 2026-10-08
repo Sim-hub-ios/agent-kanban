@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.local/
+.data/
+.env
+.env.*
+!.env.example
+*.sqlite*
+*.log
+coverage/
+playwright-report/
+test-results/
+vendor/remote-installer/target/
+vendor/remote-installer/.git/
+.DS_Store
+
+apps/macos/.build/
+apps/macos/.swiftpm/
+
+# Native macOS build and local verification data
+macos/validation/
+DerivedData/
+*.xcresult/
+__pycache__/
+*.py[cod]
+docs/agent-kanban-product-design.zip
